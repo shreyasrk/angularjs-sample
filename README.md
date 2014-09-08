@@ -11,3 +11,4 @@ Concepts implemented:
   5. Event Handlers
   6. REST Services
 
+Please refer: https://github.com/angular/angular-phonecat for the full code
