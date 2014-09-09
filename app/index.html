@@ -1,17 +1,43 @@
 <!doctype html>
-<html lang="en" ng-app="phonecatApp">
+<html lang="en" ng-app="jivaMemberApp">
 <head>
   <meta charset="utf-8">
-  <title>AngularJS: Sample Demo</title>
+  <title>Sample Demo</title>
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-
-  <script src="bower_components/jquery/jquery.js"></script>
+  <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
   <script src="js/controllers.js"></script>
 </head>
-<body>
+<body ng-controller="MemberListCtrl">
 
   <p>Welcome, {{ name }}!</p>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        Search: <input ng-model="query">
+      </div>
+        
+      <div class="col-md-10">
+        <table>
+          <tr>
+            <td class="col-md-1">ID</td>
+            <td class="col-md-2">Member Name</td>
+            <td class="col-md-2">Date-of-birth</td>
+          </tr>
+          <tbody ng-repeat="member in members | filter:query">
+            <tr>
+              <td class="col-md-1">{{member.id}}</td>
+              <td class="col-md-2">{{member.last_name}}, {{member.first_name}}</td>
+              <td class="col-md-2">{{member.dob}}</td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  
 
 </body>
 </html>
