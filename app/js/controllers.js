@@ -2,12 +2,14 @@
 
 /* Controllers */
 
-var jivaMemberApp = angular.module('jivaMemberApp', []);
+var memberApp = angular.module('memberApp', []);
 
-jivaMemberApp.controller('MemberListCtrl', function($scope, $http) {
+memberApp.controller('MemberListCtrl', function($scope, $http) {
     $scope.name = "Shreyas";
-    $http.get('data/memberdata.json').success(function(data){
-      $scope.members = data;  
+    
+    $scope.getMemberList(function($http){
+      $http.get('data/memberdata.json').success(function(data){
+        $scope.members = data;  
+      });
     });
   });
-
