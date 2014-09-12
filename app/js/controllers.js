@@ -2,14 +2,16 @@
 
 /* Controllers */
 
-var memberApp = angular.module('memberApp', []);
+var memberAppControllers = angular.module('memberAppControllers', []);
 
-memberApp.controller('MemberListCtrl', function($scope, $http) {
+memberAppControllers.controller("MemberListCtrl", function($scope, $http) {
     $scope.name = "Shreyas";
-    
-    $scope.getMemberList(function($http){
-      $http.get('data/memberdata.json').success(function(data){
-        $scope.members = data;  
-      });
-    });
+    $http.get('data/memberdata.json').success(function(data) {
+		$scope.members = data;  
+	});
+
+    $scope.getMemberList = function getMemberList(fieldvalue) {
+   		return;
+    };
+
   });

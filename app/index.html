@@ -6,17 +6,19 @@
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="css/app.css">
   <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
+  <script src="js/filters.js"></script>
 </head>
 <body ng-controller="MemberListCtrl">
 
   <p>Welcome, {{ name }}!</p>
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
-        Type in Member's Name: <input type="text" ng-model="text" name="text">
-        <input type="submit" class="btn btn-default navbar-btn" id="submit" value="Submit" ng-click="getMemberList(text)">
+        Type in Member's Name: <input type="text" ng-model="fieldvalue">
+        <button ng-click="getMemberList(fieldvalue)">Search</button> 
       </div>
 
       <div class="col-md-10">
@@ -26,7 +28,7 @@
             <td class="col-md-2">Member Name</td>
             <td class="col-md-2">Date-of-birth</td>
           </tr>
-          <tbody ng-repeat="member in members | filter:text">
+          <tbody ng-repeat="member in filteredmembers = (members | memberName:fieldvalue)">
             <tr>
               <td class="col-md-1">{{member.id}}</td>
               <td class="col-md-2">{{member.last_name}}, {{member.first_name}}</td>
@@ -35,8 +37,7 @@
           </tbody>
         </table>
       </div>
-        
-      
+
     </div>
   </div>
   
