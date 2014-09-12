@@ -4,7 +4,7 @@
 
 var memberAppFilters = angular.module('memberAppFilters', []);
 
-memberAppFilters.filter('memberName', function(){
+memberAppFilters.filter('memberFirstNameExact', function(){
 	return function(members, fieldvalue) {
 		var tempMembers = [];
 		if (fieldvalue == 'all') {

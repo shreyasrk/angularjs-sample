@@ -17,8 +17,8 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
-        Type in Member's Name: <input type="text" ng-model="fieldvalue">
-        <button ng-click="getMemberList(fieldvalue)">Search</button> 
+        Type in Member's Name: <input type="text" ng-model="textvalue">
+        <button ng-click="getMemberList(textvalue)">Search</button> 
       </div>
 
       <div class="col-md-10">
@@ -28,7 +28,7 @@
             <td class="col-md-2">Member Name</td>
             <td class="col-md-2">Date-of-birth</td>
           </tr>
-          <tbody ng-repeat="member in filteredmembers = (members | memberName:fieldvalue)">
+          <tbody ng-repeat="member in filteredmembers = (members | memberFirstNameExact:textvalue)">
             <tr>
               <td class="col-md-1">{{member.id}}</td>
               <td class="col-md-2">{{member.last_name}}, {{member.first_name}}</td>
