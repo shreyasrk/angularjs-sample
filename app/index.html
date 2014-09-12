@@ -28,7 +28,7 @@
             <td class="col-md-2">Member Name</td>
             <td class="col-md-2">Date-of-birth</td>
           </tr>
-          <tbody ng-repeat="member in filteredmembers = (members | memberFirstNameExact:textvalue)">
+          <tbody ng-repeat="member in filteredmembers">
             <tr>
               <td class="col-md-1">{{member.id}}</td>
               <td class="col-md-2">{{member.last_name}}, {{member.first_name}}</td>
