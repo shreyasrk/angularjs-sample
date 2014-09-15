@@ -4,7 +4,8 @@
 var memberApp = angular.module('memberApp', 
 	['ngRoute', 
 	 'memberAppControllers', 
-	 'memberAppFilters']);
+	 'memberAppFilters',
+	 'memberAppServices']);
 
 memberApp.config(['$routeProvider',
 	function($routeProvider) {
