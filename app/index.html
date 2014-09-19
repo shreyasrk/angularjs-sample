@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="css/app.css">
   <script src="../bower_components/angular/angular.js"></script>
   <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-resource/angular-resource.js"></script>
+  <script src="js/services.js"></script>
   <script src="js/app.js"></script>
   <script src="js/controllers.js"></script>
   <script src="js/filters.js"></script>
@@ -18,15 +20,15 @@
     <div class="row">
       <div class="col-md-2">
         Type in Member's Name: <input type="text" ng-model="textvalue">
-        <button ng-click="getMemberList(textvalue)">Search</button> 
+        <button class="btn btn-default navbar-btn" ng-click="getMemberList(textvalue)">Search</button> 
       </div>
 
-      <div class="col-md-10">
-        <table>
+      <div class="col-md-6">
+        <table class="table">
           <tr>
-            <td class="col-md-1">ID</td>
-            <td class="col-md-2">Member Name</td>
-            <td class="col-md-2">Date-of-birth</td>
+            <td class="col-md-1"><strong>ID</strong></td>
+            <td class="col-md-2"><strong>Member Name</strong></td>
+            <td class="col-md-2"><strong>Date-of-birth</strong></td>
           </tr>
           <tbody ng-repeat="member in filteredmembers">
             <tr>
